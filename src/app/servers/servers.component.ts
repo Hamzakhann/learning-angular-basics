@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   allowNewServer:boolean = false;
   serverCreationMethod:string = 'Server is now offline';
+  serverName = '';
   constructor() { 
     setTimeout(() =>{
       this.allowNewServer = true;
@@ -22,4 +23,7 @@ export class ServersComponent implements OnInit {
     this.serverCreationMethod = 'Server is now Online'
   }
 
+  onUpdateServerName(event:Event){
+    this.serverName =  (<HTMLInputElement>event.target).value;
+  }
 }

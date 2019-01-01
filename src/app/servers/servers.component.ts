@@ -7,13 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
   allowNewServer:boolean = false;
+  serverCreationMethod:string = 'Server is now offline';
   constructor() { 
     setTimeout(() =>{
-      this.allowNewServer = true
+      this.allowNewServer = true;
     }, 2000)
   }
 
   ngOnInit() {
+
+  }
+
+  onServerCreated(){
+    this.serverCreationMethod = 'Server is now Online'
   }
 
 }
